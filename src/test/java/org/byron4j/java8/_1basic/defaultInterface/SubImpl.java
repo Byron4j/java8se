@@ -29,9 +29,7 @@ public class SubImpl implements IBasic {
 
     @Test
     public void java8(){
-        arg(() -> {
-            System.out.println("sing....");
-        });
+        arg(() -> System.out.println("sing...."));
     }
 
     private void arg(IBasic basic){
