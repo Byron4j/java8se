@@ -25,4 +25,9 @@ public class UserBean {
     private String email;
     @TableField(exist = false)
     private List<String> hobbies;
+
+    public UserBean(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
 }
