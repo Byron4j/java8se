@@ -1,5 +1,7 @@
 package org.byron4j.controller;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.byron4j.base.ResponseVO;
 import org.byron4j.beans.UserBean;
 import org.byron4j.service.UserService;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -19,7 +22,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/add")
-    public ResponseVO addUser(@RequestBody UserBean userBean){
+    public ResponseVO addUser(@Valid @RequestBody UserBean userBean){
         boolean flag = userService.save(userBean);
         return ResponseVO.ofSuccess();
     }

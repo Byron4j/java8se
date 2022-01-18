@@ -38,6 +38,6 @@ public class MatchTest {
         integers.stream().map(num -> num * num).filter(ele -> ele % 3 == 0).findFirst()
                 .ifPresent(System.out::println);
 
-        
+
     }
 }

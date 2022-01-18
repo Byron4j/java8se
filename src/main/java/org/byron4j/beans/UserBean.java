@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @Data
@@ -21,6 +22,8 @@ public class UserBean {
     private String name;
     @TableField
     private Integer age;
+
+    @NotBlank(message = "email不能为空")
     @TableField
     private String email;
     @TableField(exist = false)
