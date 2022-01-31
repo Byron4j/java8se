@@ -2,6 +2,9 @@ package org.byron4j.java8.chapter05;
 
 import org.byron4j.beans.Dish;
 
+import java.util.Comparator;
+import java.util.Optional;
+
 /**
  * 规约操作reduce；
  * 将流中所有元素反复结合，得到一个值
@@ -27,5 +30,9 @@ public class ReduceTest {
                 .map(ele -> ele.getCalories())
                 .reduce(0, Integer::max);
         System.out.println(maxCalories2);
+        // max 替换reduce
+        System.out.println(Dish.menu().stream()
+                .max(Comparator.comparing(Dish::getCalories))
+                .get());
     }
 }
